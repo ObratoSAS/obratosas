@@ -1,0 +1,37 @@
+.site-footer {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 3rem 0 1.5rem;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+}
+
+.site-footer h3,
+.site-footer h4 {
+  margin-bottom: 0.75rem;
+}
+
+.site-footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.site-footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer__bottom {
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+}

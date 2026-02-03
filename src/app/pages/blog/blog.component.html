@@ -1,0 +1,42 @@
+<section class="section">
+  <div class="container">
+    <app-section-header
+      kicker="Blog"
+      title="Insights para operaciones impecables"
+      subtitle="Contenido práctico para administradores y equipos de operaciones."
+    ></app-section-header>
+    <div class="blog-controls">
+      <input class="input" type="search" placeholder="Buscar artículos" [(ngModel)]="search" aria-label="Buscar" />
+      <div class="blog-tags">
+        <button
+          type="button"
+          class="tag-btn"
+          [class.tag-btn--active]="selectedTag === 'Todos'"
+          (click)="selectTag('Todos')"
+        >
+          Todos
+        </button>
+        <button
+          *ngFor="let tag of tags"
+          type="button"
+          class="tag-btn"
+          [class.tag-btn--active]="selectedTag === tag"
+          (click)="selectTag(tag)"
+        >
+          {{ tag }}
+        </button>
+      </div>
+    </div>
+    <div class="grid grid--3">
+      <app-card *ngFor="let post of filteredPosts">
+        <app-badge variant="neutral">{{ post.readTime }}</app-badge>
+        <h3>{{ post.title }}</h3>
+        <p class="muted">{{ post.excerpt }}</p>
+        <div class="blog-tags__list">
+          <app-badge *ngFor="let tag of post.tags">{{ tag }}</app-badge>
+        </div>
+        <app-button variant="ghost" [link]="'/blog/' + post.slug">Leer artículo</app-button>
+      </app-card>
+    </div>
+  </div>
+</section>

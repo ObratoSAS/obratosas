@@ -1,0 +1,6 @@
+<div class="form-field">
+  <label [attr.for]="forId">{{ label }}</label>
+  <ng-content></ng-content>
+  <small *ngIf="hint" class="form-field__hint">{{ hint }}</small>
+  <small *ngIf="error" class="form-field__error" role="alert">{{ error }}</small>
+</div>

@@ -1,0 +1,29 @@
+import { Routes } from '@angular/router';
+import { HomeComponent } from './pages/home/home.component';
+import { ServicesComponent } from './pages/services/services.component';
+import { ServiceDetailComponent } from './pages/service-detail/service-detail.component';
+import { SectorsComponent } from './pages/sectors/sectors.component';
+import { CasesComponent } from './pages/cases/cases.component';
+import { CaseDetailComponent } from './pages/case-detail/case-detail.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { BlogComponent } from './pages/blog/blog.component';
+import { BlogDetailComponent } from './pages/blog-detail/blog-detail.component';
+import { PrivacyComponent } from './pages/privacy/privacy.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+
+export const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'servicios', component: ServicesComponent },
+  { path: 'servicios/:slug', component: ServiceDetailComponent },
+  { path: 'sectores', component: SectorsComponent },
+  { path: 'casos', component: CasesComponent },
+  { path: 'casos/:id', component: CaseDetailComponent },
+  { path: 'nosotros', component: AboutComponent },
+  { path: 'contacto', component: ContactComponent },
+  { path: 'blog', component: BlogComponent },
+  { path: 'blog/:slug', component: BlogDetailComponent },
+  { path: 'privacidad', component: PrivacyComponent },
+  { path: '404', component: NotFoundComponent },
+  { path: '**', redirectTo: '404' }
+];
