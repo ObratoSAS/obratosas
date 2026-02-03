@@ -1,0 +1,83 @@
+<section class="section">
+  <div class="container">
+    <app-section-header
+      kicker="Nosotros"
+      title="Construimos confianza a través del servicio"
+      subtitle="Obrato nació para elevar la operación diaria de espacios residenciales y corporativos."
+    ></app-section-header>
+    <div class="grid grid--2">
+      <app-card>
+        <h3>Historia</h3>
+        <p class="muted">
+          Desde 2008 acompañamos a administradores y gerencias en la ejecución de servicios esenciales con
+          protocolos claros y equipos confiables.
+        </p>
+      </app-card>
+      <app-card>
+        <h3>Misión y visión</h3>
+        <p class="muted">
+          Ofrecer soluciones integrales que protejan la operación y mejoren la experiencia de quienes habitan o
+          visitan cada espacio.
+        </p>
+      </app-card>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <app-section-header title="Valores" subtitle="Principios que guían nuestro servicio."></app-section-header>
+    <div class="grid grid--4">
+      <app-card *ngFor="let value of values">
+        <p>{{ value }}</p>
+      </app-card>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <app-section-header title="Equipo" subtitle="Especialistas en cada línea de servicio."></app-section-header>
+    <div class="grid grid--4">
+      <app-card *ngFor="let member of team">
+        <div class="avatar"></div>
+        <h3>{{ member.name }}</h3>
+        <p class="muted">{{ member.role }}</p>
+      </app-card>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container metrics">
+    <div>
+      <h2>Cumplimiento y protocolos</h2>
+      <p class="muted">Cumplimos estándares de seguridad, bioseguridad y gestión operacional.</p>
+      <ul>
+        <li>Planes de emergencia actualizados.</li>
+        <li>Capacitaciones trimestrales.</li>
+        <li>Indicadores de satisfacción y continuidad.</li>
+      </ul>
+    </div>
+    <div class="metrics__cards">
+      <app-card>
+        <h3>+95%</h3>
+        <p class="muted">Retención de clientes</p>
+      </app-card>
+      <app-card>
+        <h3>4.8/5</h3>
+        <p class="muted">Promedio en evaluación</p>
+      </app-card>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container cta">
+    <div>
+      <h2>Trabaja con nosotros</h2>
+      <p class="muted">Estamos en constante crecimiento. Envíanos tu hoja de vida.</p>
+    </div>
+    <app-button variant="primary" [link]="'/contacto'">Postularme</app-button>
+  </div>
+</section>

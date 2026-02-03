@@ -1,0 +1,11 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E2E8F0" />
+      <stop offset="100%" stop-color="#CBD5F5" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)" />
+  <rect x="80" y="80" width="640" height="440" rx="32" fill="#F8FAFC" stroke="#CBD5F5" stroke-width="4" />
+  <text x="50%" y="50%" text-anchor="middle" font-family="Inter, Arial" font-size="28" fill="#64748B">Imagen de referencia</text>
+</svg>

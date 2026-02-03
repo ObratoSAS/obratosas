@@ -1,0 +1,22 @@
+.section-header {
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.section-header--center {
+  text-align: center;
+  justify-items: center;
+}
+
+.section-header__kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+.section-header__subtitle {
+  color: var(--color-muted);
+  max-width: 620px;
+}

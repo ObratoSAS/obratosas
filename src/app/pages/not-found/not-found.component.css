@@ -1,0 +1,23 @@
+.not-found {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  align-items: center;
+}
+
+.not-found__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.not-found__art {
+  background: linear-gradient(135deg, #e2e8f0, #cbd5f5);
+  border-radius: 32px;
+  min-height: 200px;
+  display: grid;
+  place-items: center;
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}

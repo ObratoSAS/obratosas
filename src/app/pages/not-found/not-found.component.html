@@ -1,0 +1,18 @@
+<section class="section">
+  <div class="container not-found">
+    <div>
+      <app-section-header
+        kicker="404"
+        title="No encontramos esta página"
+        subtitle="Puede que el enlace esté roto o la página haya sido movida."
+      ></app-section-header>
+      <div class="not-found__actions">
+        <app-button variant="primary" [link]="'/'">Volver al inicio</app-button>
+        <app-button variant="ghost" [link]="'/contacto'">Contactar</app-button>
+      </div>
+    </div>
+    <div class="not-found__art">
+      <span>404</span>
+    </div>
+  </div>
+</section>

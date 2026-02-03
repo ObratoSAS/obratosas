@@ -1,0 +1,19 @@
+.intro {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.service-meta {
+  display: grid;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.service-meta ul {
+  padding-left: 1.2rem;
+  margin: 0.5rem 0 0;
+}

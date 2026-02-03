@@ -1,0 +1,31 @@
+.avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e2e8f0, #cbd5f5);
+  margin-bottom: 1rem;
+}
+
+.metrics {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  align-items: center;
+}
+
+.metrics ul {
+  padding-left: 1.2rem;
+}
+
+.metrics__cards {
+  display: grid;
+  gap: 1rem;
+}
+
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
