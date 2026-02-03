@@ -1,0 +1,37 @@
+<section class="section">
+  <div class="container">
+    <app-section-header
+      kicker="Servicios"
+      title="Soluciones integrales para cada operación"
+      subtitle="Diseñamos equipos y protocolos específicos para cada necesidad."
+    ></app-section-header>
+    <div class="intro">
+      <p class="muted">
+        Trabajamos con estándares premium, reportes claros y equipos entrenados para asegurar continuidad
+        operativa en residencias, oficinas y comercios.
+      </p>
+      <app-button variant="primary" [link]="'/contacto'">Solicitar cotización</app-button>
+    </div>
+    <div class="grid grid--2">
+      <app-card *ngFor="let service of services">
+        <h3>{{ service.name }}</h3>
+        <p class="muted">{{ service.summary }}</p>
+        <div class="service-meta">
+          <div>
+            <h4>Qué incluye</h4>
+            <ul>
+              <li *ngFor="let item of service.includes">{{ item }}</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Ideal para</h4>
+            <ul>
+              <li *ngFor="let item of service.idealFor">{{ item }}</li>
+            </ul>
+          </div>
+        </div>
+        <app-button variant="ghost" [link]="'/servicios/' + service.slug">Ver detalle</app-button>
+      </app-card>
+    </div>
+  </div>
+</section>

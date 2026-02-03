@@ -1,0 +1,53 @@
+<section class="section" *ngIf="caseItem; else notFound">
+  <div class="container">
+    <app-section-header
+      kicker="Caso de éxito"
+      [title]="caseItem.title"
+      [subtitle]="caseItem.summary"
+    ></app-section-header>
+    <div class="case-detail">
+      <div class="case-detail__gallery">
+        <img [src]="selectedImage" [alt]="caseItem.title" class="case-detail__hero" />
+        <div class="case-detail__thumbs">
+          <button
+            *ngFor="let img of caseItem.gallery"
+            type="button"
+            (click)="setImage(img)"
+            [class.case-detail__thumb--active]="selectedImage === img"
+          >
+            <img [src]="img" [alt]="caseItem.title" />
+          </button>
+        </div>
+      </div>
+      <div class="case-detail__info">
+        <app-card>
+          <h3>Ficha técnica</h3>
+          <ul>
+            <li><strong>Ubicación:</strong> {{ caseItem.location }}</li>
+            <li><strong>Sector:</strong> {{ caseItem.sector }}</li>
+            <li><strong>Categoría:</strong> {{ caseItem.category }}</li>
+          </ul>
+          <div class="case-detail__tags">
+            <app-badge variant="neutral" *ngFor="let tag of caseItem.tags">{{ tag }}</app-badge>
+          </div>
+        </app-card>
+        <app-card>
+          <h3>Resultados</h3>
+          <ul>
+            <li *ngFor="let result of caseItem.results">{{ result }}</li>
+          </ul>
+        </app-card>
+        <app-button variant="primary" [link]="'/contacto'">Quiero resultados así</app-button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<ng-template #notFound>
+  <section class="section">
+    <div class="container">
+      <app-section-header title="Caso no encontrado" subtitle="Explora nuestro portafolio completo."></app-section-header>
+      <app-button variant="primary" [link]="'/casos'">Ver casos</app-button>
+    </div>
+  </section>
+</ng-template>

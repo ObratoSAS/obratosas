@@ -1,0 +1,68 @@
+<section class="section" *ngIf="service; else notFound">
+  <div class="container">
+    <div class="service-hero">
+      <div>
+        <span class="pill">{{ service.name }}</span>
+        <h1>{{ service.name }}</h1>
+        <p class="muted">{{ service.summary }}</p>
+        <app-button variant="primary" [link]="'/contacto'">Cotizar este servicio</app-button>
+      </div>
+      <div class="service-hero__card">
+        <h3>Beneficios clave</h3>
+        <ul>
+          <li *ngFor="let benefit of service.benefits">{{ benefit }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" *ngIf="service">
+  <div class="container">
+    <app-section-header title="Qué incluye" subtitle="Entrega completa y supervisada."></app-section-header>
+    <div class="grid grid--2">
+      <app-card>
+        <h3>Alcance del servicio</h3>
+        <ul>
+          <li *ngFor="let item of service.includes">{{ item }}</li>
+        </ul>
+      </app-card>
+      <app-card>
+        <h3>Cómo lo prestamos</h3>
+        <ul>
+          <li *ngFor="let item of service.delivery">{{ item }}</li>
+        </ul>
+      </app-card>
+    </div>
+  </div>
+</section>
+
+<section class="section" *ngIf="service">
+  <div class="container">
+    <app-section-header title="Checklist operativo" subtitle="Lo que garantizamos en cada implementación."></app-section-header>
+    <div class="grid grid--3">
+      <app-card *ngFor="let item of service.checklist">
+        <p>{{ item }}</p>
+      </app-card>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" *ngIf="service">
+  <div class="container service-cta">
+    <div>
+      <h2>¿Quieres implementar {{ service.name.toLowerCase() }}?</h2>
+      <p class="muted">Nuestro equipo comercial prepara una propuesta en menos de 24 horas.</p>
+    </div>
+    <app-button variant="secondary" [link]="'/contacto'">Agendar llamada</app-button>
+  </div>
+</section>
+
+<ng-template #notFound>
+  <section class="section">
+    <div class="container">
+      <app-section-header title="Servicio no encontrado" subtitle="Revisa nuestra lista completa de servicios."></app-section-header>
+      <app-button variant="primary" [link]="'/servicios'">Ver servicios</app-button>
+    </div>
+  </section>
+</ng-template>

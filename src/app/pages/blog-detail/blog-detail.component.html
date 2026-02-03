@@ -1,0 +1,40 @@
+<section class="section" *ngIf="post; else notFound">
+  <div class="container">
+    <div class="blog-detail">
+      <div class="blog-detail__content">
+        <app-badge variant="neutral">{{ post.date }} · {{ post.readTime }}</app-badge>
+        <h1>{{ post.title }}</h1>
+        <p class="muted">{{ post.excerpt }}</p>
+        <div class="blog-detail__tags">
+          <app-badge *ngFor="let tag of post.tags">{{ tag }}</app-badge>
+        </div>
+        <div class="blog-detail__section" *ngFor="let section of post.sections" [attr.id]="section.id">
+          <h2>{{ section.title }}</h2>
+          <p *ngFor="let paragraph of section.content">{{ paragraph }}</p>
+        </div>
+        <div class="blog-detail__cta">
+          <h3>¿Quieres asesoría especializada?</h3>
+          <p class="muted">Nuestro equipo puede ayudarte a diseñar una operación impecable.</p>
+          <app-button variant="primary" [link]="'/contacto'">Hablar con un experto</app-button>
+        </div>
+      </div>
+      <aside class="blog-detail__toc">
+        <h3>Tabla de contenidos</h3>
+        <ul>
+          <li *ngFor="let section of post.sections">
+            <a [routerLink]="[]" [fragment]="section.id">{{ section.title }}</a>
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<ng-template #notFound>
+  <section class="section">
+    <div class="container">
+      <app-section-header title="Artículo no encontrado" subtitle="Regresa a nuestro blog para más contenido."></app-section-header>
+      <app-button variant="primary" [link]="'/blog'">Volver al blog</app-button>
+    </div>
+  </section>
+</ng-template>

@@ -1,0 +1,82 @@
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.hero__list {
+  padding-left: 1.2rem;
+  margin: 1rem 0 0;
+  color: var(--color-muted);
+}
+
+.service-card__icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  background: rgba(30, 42, 68, 0.08);
+  border-radius: 16px;
+  margin-bottom: 1rem;
+}
+
+.service-card__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.process {
+  text-align: center;
+}
+
+.process__step {
+  background: var(--color-surface);
+  border-radius: 20px;
+  padding: 1.5rem;
+  border: 1px solid var(--color-border);
+}
+
+.process__step span {
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: var(--color-primary);
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.case-card__img {
+  border-radius: 16px;
+  margin-bottom: 1rem;
+  border: 1px solid var(--color-border);
+}
+
+.case-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.cta {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  align-items: center;
+}
+
+.cta__form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.modal__form {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}

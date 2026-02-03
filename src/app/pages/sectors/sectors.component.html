@@ -1,0 +1,21 @@
+<section class="section">
+  <div class="container">
+    <app-section-header
+      kicker="Sectores"
+      title="Cobertura especializada por tipo de operación"
+      subtitle="Adaptamos equipos, horarios y protocolos para cada sector."
+    ></app-section-header>
+    <div class="grid grid--3">
+      <app-card *ngFor="let sector of sectors">
+        <h3>{{ sector.name }}</h3>
+        <p class="muted">{{ sector.description }}</p>
+        <ul>
+          <li *ngFor="let bullet of sector.bullets">{{ bullet }}</li>
+        </ul>
+      </app-card>
+    </div>
+    <div class="cta">
+      <app-button variant="primary" [link]="'/contacto'">Hablar con un asesor</app-button>
+    </div>
+  </div>
+</section>
