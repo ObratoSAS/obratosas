@@ -1,0 +1,31 @@
+<section class="section">
+  <div class="container">
+    <app-section-header
+      kicker="Portafolio"
+      title="Casos que muestran resultados medibles"
+      subtitle="Filtra por categoría y conoce el impacto de nuestro servicio."
+    ></app-section-header>
+    <div class="filters" role="tablist" aria-label="Filtro de casos">
+      <button
+        *ngFor="let filter of filters"
+        type="button"
+        class="filter-btn"
+        [class.filter-btn--active]="activeFilter === filter.value"
+        (click)="setFilter(filter.value)"
+      >
+        {{ filter.label }}
+      </button>
+    </div>
+    <div class="grid grid--3">
+      <app-card *ngFor="let item of filteredCases">
+        <img [src]="item.gallery[0]" [alt]="item.title" class="case-card__img" />
+        <h3>{{ item.title }}</h3>
+        <p class="muted">{{ item.summary }}</p>
+        <div class="case-card__tags">
+          <app-badge variant="neutral" *ngFor="let tag of item.tags">{{ tag }}</app-badge>
+        </div>
+        <app-button variant="ghost" [link]="'/casos/' + item.id">Ver caso</app-button>
+      </app-card>
+    </div>
+  </div>
+</section>

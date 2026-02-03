@@ -1,0 +1,53 @@
+.contact {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.contact__form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.services-select {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.services-select__label {
+  font-weight: 600;
+}
+
+.services-select__options {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.services-select__options label {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.success {
+  color: #15803d;
+  font-weight: 600;
+}
+
+.error {
+  color: #b91c1c;
+  font-weight: 600;
+}
+
+.map {
+  height: 180px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #e2e8f0, #cbd5f5);
+}

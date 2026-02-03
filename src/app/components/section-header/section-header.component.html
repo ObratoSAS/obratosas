@@ -1,0 +1,5 @@
+<div class="section-header" [class.section-header--center]="align === 'center'">
+  <p *ngIf="kicker" class="section-header__kicker">{{ kicker }}</p>
+  <h2>{{ title }}</h2>
+  <p *ngIf="subtitle" class="section-header__subtitle">{{ subtitle }}</p>
+</div>

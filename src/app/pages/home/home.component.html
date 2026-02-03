@@ -1,0 +1,227 @@
+<section class="section">
+  <div class="container hero">
+    <div>
+      <span class="pill">Servicios integrales premium</span>
+      <h1>Servicios que mantienen tus espacios impecables y seguros.</h1>
+      <p class="muted">
+        Ornamentación, conserjería, jardinería y servicios generales para edificios, oficinas y comercios.
+      </p>
+      <div class="hero__actions">
+        <app-button variant="primary" (click)="openModal()">Solicitar cotización</app-button>
+        <app-button variant="ghost" [link]="'/servicios'">Ver servicios</app-button>
+      </div>
+      <div class="hero__stats">
+        <div class="hero__stat">+120 sedes atendidas</div>
+        <div class="hero__stat">18 años de experiencia</div>
+        <div class="hero__stat">96% satisfacción</div>
+      </div>
+    </div>
+    <div class="hero__card">
+      <h3>Atención rápida y seguimiento continuo</h3>
+      <p class="muted">
+        Un equipo especializado que entiende tus prioridades operativas y cuida cada detalle.
+      </p>
+      <ul class="hero__list">
+        <li>Protocolos certificados y personal capacitado.</li>
+        <li>Indicadores semanales y comunicación transparente.</li>
+        <li>Flexibilidad para eventos y temporadas especiales.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <app-section-header
+      kicker="Servicios"
+      title="Soluciones integrales para la operación diaria"
+      subtitle="Cada servicio está diseñado para elevar la experiencia de residentes, colaboradores y visitantes."
+    ></app-section-header>
+    <div class="grid grid--2">
+      <app-card *ngFor="let service of services" class="service-card">
+        <div class="service-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 3l3 6 6 .9-4.5 4.4 1 6.4L12 17l-5.5 3.7 1-6.4L3 9.9 9 9z" />
+          </svg>
+        </div>
+        <h3>{{ service.name }}</h3>
+        <p class="muted">{{ service.summary }}</p>
+        <ul>
+          <li *ngFor="let item of service.highlights">{{ item }}</li>
+        </ul>
+        <app-button variant="secondary" [link]="'/servicios/' + service.slug">Ver detalle</app-button>
+      </app-card>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <app-section-header
+      kicker="Sectores"
+      title="Experiencia comprobada en entornos clave"
+      subtitle="Adaptamos nuestros equipos a las necesidades de cada sector."
+    ></app-section-header>
+    <div class="grid grid--3">
+      <app-card>
+        <app-badge>Residencial</app-badge>
+        <h3>Conjuntos y edificios</h3>
+        <p class="muted">Atención 24/7 con foco en seguridad, estética y convivencia.</p>
+      </app-card>
+      <app-card>
+        <app-badge>Corporativo</app-badge>
+        <h3>Oficinas y coworkings</h3>
+        <p class="muted">Operación impecable con personal flexible y protocolos de servicio.</p>
+      </app-card>
+      <app-card>
+        <app-badge>Comercial</app-badge>
+        <h3>Retail y centros comerciales</h3>
+        <p class="muted">Equipos coordinados para altos flujos y temporadas de alto tráfico.</p>
+      </app-card>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <app-section-header
+      kicker="Diferenciales"
+      title="Un equipo que piensa en tu operación"
+      subtitle="Nuestros estándares garantizan continuidad, control y eficiencia."
+    ></app-section-header>
+    <div class="grid grid--3">
+      <app-card>
+        <h3>Personal capacitado</h3>
+        <p class="muted">Formación continua y evaluación de servicio.</p>
+      </app-card>
+      <app-card>
+        <h3>Supervisión constante</h3>
+        <p class="muted">Indicadores semanales y reportes ejecutivos.</p>
+      </app-card>
+      <app-card>
+        <h3>Protocolos claros</h3>
+        <p class="muted">Estandarizamos procesos para cada sector.</p>
+      </app-card>
+      <app-card>
+        <h3>Flexibilidad</h3>
+        <p class="muted">Cobertura por eventos, temporadas y horarios extendidos.</p>
+      </app-card>
+      <app-card>
+        <h3>Cobertura regional</h3>
+        <p class="muted">Equipos en principales ciudades con soporte central.</p>
+      </app-card>
+      <app-card>
+        <h3>Respuesta rápida</h3>
+        <p class="muted">Atención de novedades con comunicación inmediata.</p>
+      </app-card>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <app-section-header
+      kicker="Proceso"
+      title="Así trabajamos contigo"
+      subtitle="Seguimos un flujo claro para asegurar resultados y continuidad."
+    ></app-section-header>
+    <div class="grid grid--4 process">
+      <div class="process__step">
+        <span>1</span>
+        <h4>Diagnóstico</h4>
+        <p class="muted">Visitamos tu operación y levantamos necesidades.</p>
+      </div>
+      <div class="process__step">
+        <span>2</span>
+        <h4>Propuesta</h4>
+        <p class="muted">Diseñamos un plan con recursos, tiempos y métricas.</p>
+      </div>
+      <div class="process__step">
+        <span>3</span>
+        <h4>Implementación</h4>
+        <p class="muted">Asignamos equipo, protocolos y supervisión.</p>
+      </div>
+      <div class="process__step">
+        <span>4</span>
+        <h4>Seguimiento</h4>
+        <p class="muted">Reportes periódicos y mejoras continuas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <app-section-header
+      kicker="Casos"
+      title="Resultados reales en espacios reales"
+      subtitle="Galería de proyectos con enfoque en detalle y experiencia premium."
+    ></app-section-header>
+    <div class="grid grid--3">
+      <app-card *ngFor="let item of cases">
+        <img [src]="item.gallery[0]" [alt]="item.title" class="case-card__img" />
+        <h3>{{ item.title }}</h3>
+        <p class="muted">{{ item.summary }}</p>
+        <div class="case-card__tags">
+          <app-badge variant="neutral" *ngFor="let tag of item.tags">{{ tag }}</app-badge>
+        </div>
+        <app-button variant="ghost" [link]="'/casos/' + item.id">Ver caso</app-button>
+      </app-card>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <app-section-header
+      kicker="Testimonios"
+      title="Confianza respaldada por nuestros clientes"
+    ></app-section-header>
+    <div class="grid grid--3">
+      <app-card *ngFor="let item of testimonials">
+        <p>“{{ item.quote }}”</p>
+        <strong>{{ item.name }}</strong>
+        <span class="muted">{{ item.role }}</span>
+      </app-card>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container cta">
+    <div>
+      <h2>¿Listo para elevar tu operación?</h2>
+      <p class="muted">Agenda una asesoría y recibe una propuesta personalizada en 24 horas.</p>
+    </div>
+    <div class="cta__form">
+      <input class="input" type="email" placeholder="Email corporativo" aria-label="Email" />
+      <input class="input" type="tel" placeholder="Teléfono" aria-label="Teléfono" />
+      <app-button variant="secondary">Quiero una cotización</app-button>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <app-section-header
+      kicker="FAQ"
+      title="Resolvemos tus dudas"
+    ></app-section-header>
+    <div class="grid grid--2">
+      <app-card *ngFor="let item of faqs">
+        <h3>{{ item.q }}</h3>
+        <p class="muted">{{ item.a }}</p>
+      </app-card>
+    </div>
+  </div>
+</section>
+
+<app-modal [isOpen]="isModalOpen" title="Solicita tu cotización" (closed)="closeModal()">
+  <p class="muted">Déjanos tus datos y un asesor de Obrato se comunicará contigo en menos de 24 horas.</p>
+  <div class="modal__form">
+    <input class="input" type="text" placeholder="Nombre" aria-label="Nombre" />
+    <input class="input" type="email" placeholder="Email" aria-label="Email" />
+    <input class="input" type="tel" placeholder="Teléfono" aria-label="Teléfono" />
+    <app-button variant="primary">Enviar solicitud</app-button>
+  </div>
+</app-modal>

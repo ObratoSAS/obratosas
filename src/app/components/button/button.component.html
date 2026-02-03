@@ -1,0 +1,11 @@
+<ng-container *ngIf="link; else buttonTemplate">
+  <a [routerLink]="link" class="btn" [ngClass]="'btn--' + variant" [attr.aria-label]="ariaLabel">
+    <ng-content></ng-content>
+  </a>
+</ng-container>
+
+<ng-template #buttonTemplate>
+  <button class="btn" [ngClass]="'btn--' + variant" [type]="type" [attr.aria-label]="ariaLabel">
+    <ng-content></ng-content>
+  </button>
+</ng-template>

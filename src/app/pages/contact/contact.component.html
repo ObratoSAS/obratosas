@@ -1,0 +1,76 @@
+<section class="section">
+  <div class="container">
+    <app-section-header
+      kicker="Contacto"
+      title="Solicita una cotización personalizada"
+      subtitle="Cuéntanos sobre tu operación y te responderemos en menos de 24 horas."
+    ></app-section-header>
+    <div class="contact">
+      <form class="contact__form" [formGroup]="form" (ngSubmit)="submit()" novalidate>
+        <div class="form-grid form-grid--2">
+          <app-form-field label="Nombre" [forId]="'name'" [error]="getError('name')">
+            <input id="name" class="input" type="text" formControlName="name" />
+          </app-form-field>
+          <app-form-field label="Email" [forId]="'email'" [error]="getError('email')">
+            <input id="email" class="input" type="email" formControlName="email" />
+          </app-form-field>
+          <app-form-field label="Teléfono" [forId]="'phone'" [error]="getError('phone')">
+            <input id="phone" class="input" type="tel" formControlName="phone" />
+          </app-form-field>
+          <app-form-field label="Empresa / Conjunto" [forId]="'company'" [error]="getError('company')">
+            <input id="company" class="input" type="text" formControlName="company" />
+          </app-form-field>
+          <app-form-field label="Sector" [forId]="'sector'" [error]="getError('sector')">
+            <select id="sector" formControlName="sector">
+              <option value="">Selecciona</option>
+              <option value="residencial">Residencial</option>
+              <option value="corporativo">Corporativo</option>
+              <option value="comercial">Comercial</option>
+            </select>
+          </app-form-field>
+          <app-form-field label="Ciudad (opcional)" [forId]="'city'">
+            <input id="city" class="input" type="text" formControlName="city" />
+          </app-form-field>
+        </div>
+        <div class="services-select">
+          <p class="services-select__label">Servicios de interés</p>
+          <div class="services-select__options">
+            <label *ngFor="let item of services">
+              <input
+                type="checkbox"
+                [checked]="form.value.serviceList?.includes(item)"
+                (change)="toggleService(item)"
+              />
+              <span>{{ item }}</span>
+            </label>
+          </div>
+          <small class="form-field__error" *ngIf="getError('serviceList')">Selecciona al menos un servicio.</small>
+        </div>
+        <app-form-field label="Mensaje" [forId]="'message'" [error]="getError('message')">
+          <textarea id="message" rows="4" formControlName="message"></textarea>
+        </app-form-field>
+        <div class="form-actions">
+          <app-button variant="primary" type="submit">Enviar solicitud</app-button>
+          <span class="muted" *ngIf="status === 'loading'">Enviando...</span>
+          <span class="success" *ngIf="status === 'success'">Solicitud enviada. Te contactaremos pronto.</span>
+          <span class="error" *ngIf="status === 'error'">Hubo un error. Intenta nuevamente.</span>
+        </div>
+      </form>
+      <div class="contact__info">
+        <app-card>
+          <h3>Información de contacto</h3>
+          <ul>
+            <li>hola@obrato.co</li>
+            <li>+57 300 000 0000</li>
+            <li>Bogotá, Colombia</li>
+            <li>Lun - Sáb: 7:00 a.m. - 6:00 p.m.</li>
+          </ul>
+        </app-card>
+        <app-card>
+          <h3>Mapa (placeholder)</h3>
+          <div class="map"></div>
+        </app-card>
+      </div>
+    </div>
+  </div>
+</section>

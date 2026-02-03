@@ -1,0 +1,48 @@
+<header class="site-header">
+  <div class="container header__inner">
+    <a class="brand" routerLink="/" aria-label="Ir al inicio de Obrato">
+      <span class="brand__mark">Obrato</span>
+      <span class="brand__tag">Servicios Premium</span>
+    </a>
+
+    <nav class="nav" [class.nav--open]="isMenuOpen" aria-label="Navegación principal">
+      <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Inicio</a>
+      <a routerLink="/servicios" routerLinkActive="is-active" (click)="closeMenu()">Servicios</a>
+      <a routerLink="/sectores" routerLinkActive="is-active" (click)="closeMenu()">Sectores</a>
+      <a routerLink="/casos" routerLinkActive="is-active" (click)="closeMenu()">Casos</a>
+      <a routerLink="/nosotros" routerLinkActive="is-active" (click)="closeMenu()">Nosotros</a>
+      <a routerLink="/blog" routerLinkActive="is-active" (click)="closeMenu()">Blog</a>
+      <a routerLink="/contacto" routerLinkActive="is-active" (click)="closeMenu()">Contacto</a>
+    </nav>
+
+    <div class="header__actions">
+      <button class="theme-toggle" type="button" (click)="themeToggle.emit()" aria-label="Cambiar tema">
+        <span aria-hidden="true">🌓</span>
+      </button>
+      <app-button variant="primary" [link]="'/contacto'">Solicitar cotización</app-button>
+      <button
+        class="menu-toggle"
+        type="button"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="isMenuOpen"
+        aria-controls="mobile-nav"
+        aria-label="Abrir menú"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-nav" class="mobile-nav" [class.mobile-nav--open]="isMenuOpen" role="dialog" aria-modal="true">
+    <nav class="mobile-nav__links" aria-label="Navegación móvil">
+      <a routerLink="/" (click)="closeMenu()">Inicio</a>
+      <a routerLink="/servicios" (click)="closeMenu()">Servicios</a>
+      <a routerLink="/sectores" (click)="closeMenu()">Sectores</a>
+      <a routerLink="/casos" (click)="closeMenu()">Casos</a>
+      <a routerLink="/nosotros" (click)="closeMenu()">Nosotros</a>
+      <a routerLink="/blog" (click)="closeMenu()">Blog</a>
+      <a routerLink="/contacto" (click)="closeMenu()">Contacto</a>
+    </nav>
+  </div>
+</header>
